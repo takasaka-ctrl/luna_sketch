@@ -60,7 +60,7 @@ const DifyLikeUI: React.FC<DifyLikeUIProps> = ({ selectedType, onReset }) => {
     setTopicBoxes(prevTopicBoxes => [...prevTopicBoxes, newTopicBox])
   }, [topicBoxes])
 
-  const handleTopicBoxDrag = useCallback((id: number, newPosition: { x: number, y: number }) => {
+  const handleTopicBoxDrag = useCallback((id: string, newPosition: { x: number, y: number }) => {
     setTopicBoxes(prevTopicBoxes =>
       prevTopicBoxes.map(box =>
         box.id === id
