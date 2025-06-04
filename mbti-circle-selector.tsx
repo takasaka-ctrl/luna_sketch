@@ -6,7 +6,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { DifyLikeUI } from './dify-like-ui'
 
-export default function MBTICircleSelector() {
+interface MBTICircleSelectorProps {
+  onExit?: () => void
+}
+export default function MBTICircleSelector({ onExit }: MBTICircleSelectorProps) {
   const [selectedCategory, setSelectedCategory] = useState<MBTICategory | null>(null)
   const [selectedType, setSelectedType] = useState<MBTIType | null>(null)
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null)
@@ -115,7 +118,12 @@ export default function MBTICircleSelector() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 relative">
+      {onExit && (
+        <Button onClick={onExit} variant="ghost" className="absolute top-4 left-4">
+          戻る
+        </Button>
+      )}
       <h1 className="text-4xl font-bold text-center mb-8" style={{ fontFamily: "'Bebas Neue', cursive" }}>あなたのMBTIタイプを調べましょう</h1>
       
       {selectedType ? (

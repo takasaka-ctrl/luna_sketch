@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react'
 import { nanoid } from 'nanoid'
-import { MBTIType } from './utils/mbti'
+import { ChatType } from './utils/chat-categories'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { AIInputWithFile } from '@/components/ui/ai-input-with-file'
@@ -17,7 +17,7 @@ interface TopicBox {
 }
 
 interface DifyLikeUIProps {
-  selectedType: MBTIType
+  selectedType: ChatType
   onReset: () => void
 }
 
