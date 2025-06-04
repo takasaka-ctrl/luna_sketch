@@ -1,9 +1,9 @@
-import MBTICircleSelector from '../mbti-circle-selector'
+import ChatEntrance from '../chat-entrance'
 
 export default function Home() {
   return (
     <main>
-      <MBTICircleSelector />
+      <ChatEntrance />
     </main>
   )
 }
